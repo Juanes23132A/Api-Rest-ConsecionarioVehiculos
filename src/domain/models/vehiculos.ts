@@ -5,7 +5,7 @@ export class Vehiculos {
     modelo: string;
     anio: number
 
-    constructor( infoVehiculo: { 
+    constructor(infoVehiculo: {
         id?: number,
         marca: string,
         modelo: string,
@@ -16,5 +16,4 @@ export class Vehiculos {
         this.modelo = infoVehiculo.modelo
         this.anio = infoVehiculo.anio
     }
-
 }
