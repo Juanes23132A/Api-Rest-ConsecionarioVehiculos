@@ -48,7 +48,7 @@ export class UsuariosControllers {
     return result;
   }
 
-  async eliminar(id: string){
+    async eliminar(id: string){
     const result: ResultSetHeader = await this.repositorio.eliminarUsuario(id)
     if (result.affectedRows == 1){
         return {ok: true, message: `Usuario eliminado correctamente`};
