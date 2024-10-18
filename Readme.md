@@ -1,1 +1,0 @@
-4/ crear las rutas de manera independiente para cada tabla en un archivo routers 
