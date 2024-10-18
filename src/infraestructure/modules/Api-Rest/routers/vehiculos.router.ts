@@ -42,7 +42,7 @@ export const vehiculoRoutes = () => {
         }
     });
 
-    router.delete("/productos/:id", async (req, res) => {
+    router.delete("/vehiculos/:id", async (req, res) => {
         try {
           const id = req.params.id;
           if (Number.isNaN(id)) {

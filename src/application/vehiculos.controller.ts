@@ -12,7 +12,7 @@ export class VehiculosControllers {
     async agregar(payload: {
         marca: string;
         modelo: string;
-        anio: number;
+        anio: string;
     }) {
         try {
             const vehiculos = new Vehiculos({
@@ -45,7 +45,7 @@ export class VehiculosControllers {
         id: number;
         marca: string;
         modelo: string;
-        anio: number;
+        anio: string;
     }) {
         try {
             const vehiculos = new Vehiculos({
