@@ -8,7 +8,7 @@ export class UsuariosRepositorie {
         const connection = getPoolConection();
         const querySql = `INSERT INTO usuarios (nombre, email, telefono) VALUES (?, ?, ?)`;
         const values = [usuarios.nombre, usuarios.email, usuarios.telefono];
-        const result = await connection.query(querySql, values);
+        const result: [ResultSetHeader, FieldPacket[]] = await connection.query(querySql, values);
         return result[0];
     }
 

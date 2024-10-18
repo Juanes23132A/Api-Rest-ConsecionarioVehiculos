@@ -8,7 +8,7 @@ export class ReservasRepositorie {
         const connection = await getPoolConection();
         const querySql = `INSERT INTO reservas (usuario_id, vehiculo_id, fecha_reserva)  VALUES (?, ?, ?)`;
         const values = [reservas.usuario_id, reservas.vehiculo_id, reservas.fecha_reserva]
-        const  result = await connection.query(querySql, values);
+        const  result: [ResultSetHeader, FieldPacket[]] = await connection.query(querySql, values);
         return result[0];
     }
 

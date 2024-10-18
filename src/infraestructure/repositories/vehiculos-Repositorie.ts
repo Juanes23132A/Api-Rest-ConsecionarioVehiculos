@@ -8,7 +8,7 @@ export class vehiculosRepositorie {
         const connection = getPoolConection();
         const querySql = `INSERT INTO vehiculos (marca, modelo, anio) VALUES (?, ?, ?)`;
         const values = [vehiculos.marca, vehiculos.marca, vehiculos.anio];
-        const result = await connection.execute(querySql, values);
+        const result: [ResultSetHeader, FieldPacket[]] = await connection.execute(querySql, values);
         return result[0];
     }
 

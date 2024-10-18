@@ -1,17 +1,17 @@
 import Express from "express"
-import { UsuariosControllers } from "../../../../application/usuarios.controller";
+import { vehiculoRoutes } from "./vehiculos.router";
+import { usuarioRoutes } from "./usuarios.router";
+import { reservaRoutes } from "./reservas.router";
+
 export const routes = () => {
     const router = Express.Router();
-    const usuariosCtrl = new UsuariosControllers();
-    router.get("/usuarios", (req, res) => {
-        usuariosCtrl.obtener().then(result => {
-            res.send(result);
-        })
-        .catch(error => {
-            res.send(error.message);
-        })
-    })
-    return router;
+    router.get("/", (req, res) => {
+        res.send({ message: "Bienvenido a la API consecionario de vehiculos"})
+    });
 
-    
+router.use(reservaRoutes());
+router.use(usuarioRoutes());
+router.use(vehiculoRoutes());
+
+ return router;
 }
